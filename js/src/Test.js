@@ -88,8 +88,8 @@ export function Test() {
     //const left4Bit = Math.round((leftWheelSpeed + 1) * 7.5);
     //const right4Bit = Math.round((rightWheelSpeed + 1) * 7.5);
     const combined8BitValue = (leftWheelSpeed << 4) | rightWheelSpeed;
-    setLeftWheelSpeed(((combined8BitValue >> 4) - 7) / 8.0);
-    setRightWheelSpeed(((combined8BitValue & 0b00001111) - 7) / 8.0);
+    setLeftWheelSpeed((combined8BitValue >> 4) / 15.0);
+    setRightWheelSpeed((combined8BitValue & 0b00001111) / 15.0);
 
     //const binaryValue = combined8BitValue.toString(2).padStart(8, "0");
     setBinarySpeed(combined8BitValue);
